@@ -83,3 +83,8 @@ public class a9{
 // Final keyword is used to declare a constant variable in java. Once a variable is declared as final, 
 // its value cannot be changed throughout the program. In the above code, 'a1' is declared as a final 
 // variable with a value of 10. Any attempt to change its value will result in a compilation error.
+
+//READ ABOUT WIDENING AND NARROWING CONVERSION IN JAVA
+// WIDENING CONVERSION: Widening conversion is the process of converting a smaller data type to a larger data type.
+// NARROWING CONVERSION: Narrowing conversion is the process of converting a larger data type to a smaller data type.
+
