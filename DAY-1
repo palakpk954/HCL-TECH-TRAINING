@@ -1,0 +1,85 @@
+import java.util.Scanner;
+public class test1{
+public static void main(String[] args){
+    System.out.println("Hello World");
+    // varibale declaration
+    //int a = 10;
+    //int b = 20;
+    //int sum = a + b;
+
+    //System.out.println("Sum of a and b is: " + sum);
+
+
+    // dynamic value intake
+    int k, l;
+    Scanner sc = new Scanner(System.in);
+    System.out.print("Enter value for k: ");
+    k = sc.nextInt();
+    System.out.print("Enter value for l: ");
+    l = sc.nextInt();
+    int sum = k + l;
+    System.out.println("Sum of k and l is: " + sum);
+
+    int product = k * l;
+    System.out.println("Product of k and l is: " + product);
+
+    int difference = k - l;
+    System.out.println("Difference of k and l is: " + difference);
+
+    int quotient = k / l;
+    System.out.println("Quotient of k and l is: " + quotient);
+
+
+//Data types in java
+
+int a = 4;
+float b = 4.5f;
+double c = 4.5d;
+String d = "Hello";
+char e = 'A';
+boolean f = true;
+
+System.out.println("Integer value: " + a);
+System.out.println("Float value: " + b);
+System.out.println("Double value: " + c);
+System.out.println("String value: " + d);
+System.out.println("Character value: " + e);
+System.out.println("Boolean value: " + f);
+
+//Use String names
+String fname = "Palak";
+String lname = "Kumari";
+System.out.println("Full name is: " + fname + " " + lname);
+
+//Identifiers in java
+boolean isgoodjava= true;
+boolean isbadjava = false;
+System.out.println("My opinion about java is Good: " + isgoodjava);
+System.out.println("My opinion about java is Bad : " + isbadjava);
+
+final int a1 = 10;
+System.out.println("Value of a is: " + a1); 
+
+
+public class a9{
+    void get(){
+        System.out.println("This is a method inside a class");
+    }
+
+    public static void main(String[] args){
+        a9 obj = new a9();
+        obj.get();
+    
+}}}}
+
+
+// a6 -> Class Identifiers
+// main -> Method Identifier
+//args -> Parameter Identifier
+// isjavagood -> Variable Identifier
+//isjavabad -> Variable Identifier
+
+
+// Final keyword is used to declare a constant variable in java. Once a variable is declared as final, 
+// its value cannot be changed throughout the program. In the above code, 'a1' is declared as a final 
+// variable with a value of 10. Any attempt to change its value will result in a compilation error.
