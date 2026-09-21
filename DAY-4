@@ -260,3 +260,84 @@ public class a47 {
         // obj.fop();
     }
 }
+
+// Super is used to refer to the parent class constructor.
+class parent3 {
+    parent3() {
+        super();
+        System.out.println("Parent Printed");
+    }
+}
+
+class child3 extends parent3 {
+    child3() {
+        System.out.println("Child Printed");
+    }
+}
+
+public class a48 {
+    public static void main(String[] args) {
+        new child3();
+    }
+}
+
+//Private Access Modifier
+class person {
+    private String name; // private variable
+
+    public void setName(String name) {
+        this.name = name; // accessible within class
+    }
+
+    public String getName() {
+        return name;
+
+    }
+
+}
+
+public class a50 {
+    public static void main(String[] args) {
+        person obj = new person();
+        obj.setName("Rahul");
+        System.out.println(obj.getName());
+    }
+}
+
+//Default Access Modifier
+class Car {
+    String model; // default access
+}
+
+public class a51 {
+    public static void main(String[] args) {
+
+        Car c = new Car();
+        c.model = "Tesla"; // accessible within the same package
+        System.out.println(c.model);
+    }
+}
+
+//Protected Access Modifier in Java
+class Animal {
+    protected String name = "Tommy";
+
+    protected void eat() {
+        System.out.println(name + " is eating");
+    }
+}
+
+class Dog extends Animal {
+    void display() {
+        // Accessing protected members of parent class
+        System.out.println("Name: " + name);
+        eat();
+    }
+}
+
+public class a52 {
+    public static void main(String[] args) {
+        Dog d = new Dog();
+        d.display();
+    }
+}
