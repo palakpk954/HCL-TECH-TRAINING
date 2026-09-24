@@ -24,6 +24,6 @@ public class p8 {
     public static void main(String[] args) {
         new Student08().display();
         new Student08(101).display();
-        new Student08(102, "Anita").display();
+        new Student08(102, "Palak").display();
     }
 }

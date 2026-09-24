@@ -1,0 +1,343 @@
+//Java this Keyword
+public class a38 {
+
+    int num = 10;
+
+    void test(int num) {
+        System.out.println("The value of Num is: " + this.num);
+        System.out.println("The value of Num is: " + num);
+    }
+
+    public static void main(String[] args) {
+
+        a38 obj = new a38();
+        obj.test(20);
+    }
+}
+
+
+//This Keyword Example 2
+class other {
+    int rollno;
+    String name;
+
+    other(int rollno, String name) {
+        this.rollno = rollno;
+        this.name = name;
+    }
+
+    void display() {
+        System.out.println("The Name is : " + name);
+        System.out.println("The Roll No is: " + rollno);
+    }
+}
+
+public class a39 {
+
+
+
+
+    public static void main(String[] args) {
+        other obj = new other(101, "Rahul");
+        obj.display();
+    }
+}
+
+
+
+//This refers current class method
+public class a40 {
+
+    void m1() {
+
+        System.out.println("Method M1");
+        this.m2(); // m2() -> this.m2()
+    }
+
+    void m2() { // Instance of Current class - Class method
+
+        System.out.println("Method M2");
+    }
+
+    public static void main(String[] args) {
+        a40 obj = new a40();
+        obj.m1();
+    }
+}
+
+
+//THis refers to current class constructor
+public class a41 {
+
+    a41() {
+        this(41);
+        System.out.println("Constructor 1 Executed");
+    }
+
+    a41(int r) {
+        this("Rahul");
+        System.out.println("Constrcutor 2 Executed: " + r);
+    }
+
+    a41(String s) {
+        System.out.println("Constructor 3 Executed " + s);
+    }
+
+    public static void main(String[] args) {
+
+        new a41();
+    }
+}
+
+//pass the current class instance as a parameter to the method.
+public class a42 {
+
+    void m1() {
+        m2(this); // This keyword can work as argument
+        System.out.println("1st Method Printed");
+    }
+
+    void m2(a42 s) { // Can also call method as parameter
+        System.out.println("2nd Method Printed " + s);
+    }
+
+    public static void main(String[] args) {
+
+        a42 obj = new a42();
+        obj.m1();
+    }
+}
+
+// o/p - a42@4517d9a3 as reference of object
+
+//This to pass the current class instance as a parameter to the constructor
+public class a43 {
+
+    int rollNo;
+    String name;
+
+    a43(int rollNo, String name) {
+        this.rollNo = rollNo;
+        this.name = name;
+    }
+
+    void display(a43 obj) {
+        System.out.println("Roll No: " + obj.rollNo);
+        System.out.println("Name: " + obj.name);
+    }
+
+    void show() {
+        display(this); // Passing current object as parameter
+    }
+
+    public static void main(String[] args) {
+
+        a43 student = new a43(101, "Rahul");
+
+        student.show();
+    }
+}
+
+//This keyword It is used to return the current class instance from the method.
+
+public class a44 {
+
+    void m1() {
+        System.out.println("Print the Function");
+    }
+
+    String m2() {
+        System.out.println("Prints String Value");
+        return "Deepak";
+    }
+
+    a44 m3() { // Returns current class reference
+        System.out.println("Return m3");
+        return this;
+    }
+
+    public static void main(String[] args) {
+
+        a44 obj = new a44();
+        System.out.println(obj.m3());
+    }
+}
+
+// Inheritance Example
+class animal {
+    void get() {
+        System.out.println("Hello From Animal");
+    }
+}
+
+class dog extends animal {
+    void set() {
+        System.out.println("Hello from Dog");
+    }
+}
+
+public class a45 {
+
+    public static void main(String[] args) {
+
+        dog obj = new dog();
+        obj.get();
+        obj.set();
+    }
+}
+
+
+//Prcedence of Variable 
+//Statement : Super Keyword is used to refer the parent class instance variable.
+
+class first {
+    int no = 10;
+}
+
+class second extends first {
+    int no = 20;
+
+    void show(int no) {
+
+        System.out.println("The value of no is : " + no);
+        System.out.println("The value of no is : " + this.no);
+        System.out.println("The value of no is : " + super.no);
+    }
+}
+
+public class a46 {
+
+    public static void main(String[] args) {
+        second obj = new second();
+        obj.show(30);
+    }
+
+}
+
+//Prcedence of Variable 
+//Statement : Super Keyword is used to refer the parent class instance variable.
+
+class first {
+    int no = 10;
+}
+
+class second extends first {
+    int no = 20;
+
+    void show(int no) {
+
+        System.out.println("The value of no is : " + no);
+        System.out.println("The value of no is : " + this.no);
+        System.out.println("The value of no is : " + super.no);
+    }
+}
+
+public class a46 {
+
+    public static void main(String[] args) {
+        second obj = new second();
+        obj.show(30);
+    }
+
+}
+
+//Statement: Super is used to refer to the parent class method.
+class parent1 {
+    void fop() {
+        System.out.println("Parent Class Executed");
+    }
+}
+class child1 extends parent1 {
+    void foc() {
+        super.fop();// By Default Provides Super Keyword
+        System.out.println("Child class executed");
+    }
+}
+public class a47 {
+    public static void main(String[] args) {
+        child1 obj = new child1();
+        obj.foc();
+        // obj.fop();
+    }
+}
+
+// Super is used to refer to the parent class constructor.
+class parent3 {
+    parent3() {
+        super();
+        System.out.println("Parent Printed");
+    }
+}
+
+class child3 extends parent3 {
+    child3() {
+        System.out.println("Child Printed");
+    }
+}
+
+public class a48 {
+    public static void main(String[] args) {
+        new child3();
+    }
+}
+
+//Private Access Modifier
+class person {
+    private String name; // private variable
+
+    public void setName(String name) {
+        this.name = name; // accessible within class
+    }
+
+    public String getName() {
+        return name;
+
+    }
+
+}
+
+public class a50 {
+    public static void main(String[] args) {
+        person obj = new person();
+        obj.setName("Rahul");
+        System.out.println(obj.getName());
+    }
+}
+
+//Default Access Modifier
+class Car {
+    String model; // default access
+}
+
+public class a51 {
+    public static void main(String[] args) {
+
+        Car c = new Car();
+        c.model = "Tesla"; // accessible within the same package
+        System.out.println(c.model);
+    }
+}
+
+//Protected Access Modifier in Java
+class Animal {
+    protected String name = "Tommy";
+
+    protected void eat() {
+        System.out.println(name + " is eating");
+    }
+}
+
+class Dog extends Animal {
+    void display() {
+        // Accessing protected members of parent class
+        System.out.println("Name: " + name);
+        eat();
+    }
+}
+
+public class a52 {
+    public static void main(String[] args) {
+        Dog d = new Dog();
+        d.display();
+    }
+}

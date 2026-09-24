@@ -1,0 +1,284 @@
+//Showing Class and Object
+public class a26 {
+
+    String voice; // instance variable
+
+    void sound() // method
+    {
+        System.out.println("Dog Barks");
+    }
+
+    public static void main(String[] args) {
+
+        a26 obj = new a26(); // creating object (obj)
+        obj.sound(); // accessing sound() method from (obj) object
+        obj.voice = "Meaw"; // setting value in instance variable using . operator
+        System.out.println("Cat Voice is: " + obj.voice); // accessing instance variable
+    }
+}
+
+//Method to display a running message
+public class a27 {
+
+    public void get() {
+        System.out.println("Hello, from HCL");
+    }
+
+    public static void main(String[] args) {
+
+        a27 obj = new a27();
+        obj.get();
+    }
+}
+
+//Using Multiple Method
+public class a28 {
+
+    public void get() {
+
+        System.out.println("I am Running");
+    }
+
+    public static void main(String[] args) {
+
+        a28 obj = new a28();
+        obj.get();
+        obj.get();
+        obj.set();
+        obj.set();
+
+    }
+
+    public void set() {
+        System.out.println("I am Eating");
+    }
+
+}
+
+//Using Multiple Method
+public class a29 {
+
+    public void get() {
+
+        System.out.println("I am Running");
+    }
+
+    public static void main(String[] args) {
+
+        a29 obj1 = new a29();
+        obj1.get();
+        obj1.set();
+        a29 obj2 = new a29();
+        obj2.get();
+        obj2.set();
+
+    }
+
+    public void set() {
+        System.out.println("I am Eating");
+    }
+
+}
+
+//Using Multiple Method & Multiple Object
+//Also use Two Parameter
+public class a30 {
+
+    public void get(String name1) {
+
+        System.out.println(name1 + " is Eating");
+    }
+
+    public void set(String name2) {
+
+        System.out.println(name2 + " is Dancing");
+
+    }
+
+    public static void main(String[] args) {
+
+        a30 obj1 = new a30();
+        obj1.get("Rahul");
+        obj1.set("Rahul");
+
+        a30 obj2 = new a30();
+        obj2.get("Raj");
+        obj2.set("Raj");
+    }
+}
+
+//Use of Instance Variable and method parameter.
+public class a31 {
+
+    // Declare instance variables
+    int no_of_eyes; // Variable to store the number of eyes
+    String color; // Variable to store the color of the animal
+
+    // Method to display the details of an animal
+    public void details(String name) {
+        System.out.println("-------Details of " + name + "-------");
+        System.out.println("Eyes : " + no_of_eyes);
+        System.out.println("Color : " + color);
+    }
+
+    // Main method - program entry point
+    public static void main(String[] args) {
+        // Create an object 'jumbo' of Animal6 and assign values
+        a31 jumbo = new a31();
+        jumbo.no_of_eyes = 2;
+        jumbo.color = "Brown";
+        jumbo.details("Jumbo"); // Call details method for 'jumbo'
+
+        // Create another object 'buzo' of Animal6 and assign values
+        a31 buzo = new a31();
+        buzo.no_of_eyes = 2;
+        buzo.color = "Black";
+        buzo.details("Buzo"); // Call details method for 'buzo'
+    }
+}
+
+//create main method in main class only
+class animal {
+
+    void run() {
+        System.out.println("I am Running");
+    }
+}
+
+public class a32 {
+
+    public static void main(String[] args) {
+
+        animal obj = new animal();
+        obj.run();
+    }
+}
+
+//Getting Multiple class inTo main method
+class animal {
+    void sound() {
+        System.out.println("Dog Barks");
+    }
+}
+
+class bird {
+    void eat() {
+        System.out.println("Bird Flies");
+    }
+}
+
+public class a33 {
+
+    public static void main(String[] args) {
+
+        animal obj1 = new animal();
+        obj1.sound();
+
+        bird obj2 = new bird();
+        obj2.eat();
+
+    }
+}
+
+//Default Constructor
+/*
+A default constructor has no parameters. It’s used to assign default values to an object. If no constructor is explicitly defined, Java provides a default constructor.
+*/
+public class a34 {
+
+    String name;
+    int age;
+
+    public static void main(String[] args) {
+
+        a34 obj = new a34();
+        System.out.println(obj.name);
+        System.out.println(obj.age);
+    }
+}
+/*
+Explanation: No constructor is declared in the Student class. Therefore, the compiler provides a default no-argument constructor. When new Student() is executed, that constructor is called. The instance variables receive their default values, such as null for String and 0 for int.
+*/
+
+/*
+2. Parameterized Constructor
+A constructor that has parameters is known as parameterized constructor. If we want to initialize fields of the class with our own values, then use a parameterized constructor.
+*/
+public class a35 {
+    int rollno;
+    String name;
+
+    a35(int r, String n) {
+        rollno = r;
+        name = n;
+    }
+
+    public void display() {
+
+        System.err.println("Roll No. " + rollno);
+        System.out.println("Name: " + name);
+    }
+
+    public static void main(String[] args) {
+
+        a35 obj1 = new a35(100, "Rahul");
+        a35 obj2 = new a35(102, "Raj");
+
+        obj1.display();
+        obj2.display();
+    }
+}
+
+/*
+2. Parameterized Constructor
+A constructor that has parameters is known as parameterized constructor. If we want to initialize fields of the class with our own values, then use a parameterized constructor.
+*/
+public class a35 {
+    int rollno;
+    String name;
+
+    a35(int r, String n) {
+        rollno = r;
+        name = n;
+    }
+
+    public void display() {
+
+        System.err.println("Roll No. " + rollno);
+        System.out.println("Name: " + name);
+    }
+
+    public static void main(String[] args) {
+
+        a35 obj1 = new a35(100, "Rahul");
+        a35 obj2 = new a35(102, "Raj");
+
+        obj1.display();
+        obj2.display();
+    }
+}
+
+//Copy Constructor in Java
+public class a36 {
+
+    int age;
+    String name;
+
+    a36(int a, String n) {
+        age = a;
+        name = n;
+    }
+
+    void display() {
+        System.out.println("Name is: " + name);
+        System.out.println("Age is: " + age);
+    }
+
+    public static void main(String[] args) {
+
+        a36 obj1 = new a36(10, "Rajesh");
+        obj1.display();
+        a36 obj2 = obj1;
+        System.out.println("Object 2 Name: " + obj2.name + " " + "Age is: " + obj2.age);
+    }
+}
