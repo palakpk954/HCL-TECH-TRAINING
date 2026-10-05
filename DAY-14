@@ -155,3 +155,102 @@ public class b66 {
         System.out.println(aucurrentTime);
     }
 }
+
+
+//Millisecond
+
+import java.time.Duration;
+import java.time.Instant;
+import java.time.temporal.ChronoUnit;
+
+public class b67 {
+
+    public static void main(String[] args) {
+        long currentTimeMillis = System.currentTimeMillis();
+        System.out.println(currentTimeMillis);
+
+        Instant now = Instant.now();
+        Instant end = Instant.now();
+        System.out.println(now);
+        Duration d1 = Duration.between(now, end);
+        System.out.println(d1);
+        Duration d2 = Duration.of(1, ChronoUnit.MILLIS);
+        System.out.println(d2);
+        System.out.println("---END---");
+    }
+}
+
+//Date Formatter
+
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+
+public class b68 {
+
+    public static void main(String[] args) {
+        String Date = "05/10/2026";
+        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        LocalDate parse = LocalDate.parse(Date, dateTimeFormatter);
+        System.out.println(parse);
+    }
+}
+
+
+//Calculate Age and Date Difference
+import java.time.LocalDate;
+import java.time.Period;
+
+public class b69 {
+
+    public static void main(String[] args) {
+
+        // Date of Birth
+        LocalDate dob = LocalDate.of(1989, 4, 24);
+
+        // Current Date
+        LocalDate today = LocalDate.now();
+
+        // Calculate Period
+        Period age = Period.between(dob, today);
+
+        System.out.println("Date of Birth: " + dob);
+        System.out.println("Today: " + today);
+
+        System.out.println("\nAge:");
+        System.out.println("Years  : " + age.getYears());
+        System.out.println("Months : " + age.getMonths());
+        System.out.println("Days   : " + age.getDays());
+
+        System.out.println("\nComplete Age: "
+                + age.getYears() + " Years, "
+                + age.getMonths() + " Months, "
+                + age.getDays() + " Days");
+    }
+}
+
+
+//Calculate Period Between Two Dates
+
+import java.time.LocalDate;
+import java.time.Period;
+
+public class b70 {
+
+        public static void main(String[] args) {
+
+                LocalDate startDate = LocalDate.of(2026, 1, 10);
+
+                LocalDate endDate = LocalDate.of(2026, 10, 5);
+
+                Period period = Period.between(startDate, endDate);
+
+                System.out.println("Start Date: " + startDate);
+                System.out.println("End Date: " + endDate);
+
+                System.out.println("\nDifference:");
+                System.out.println("Years  : " + period.getYears());
+                System.out.println("Months : " + period.getMonths());
+                System.out.println("Days   : " + period.getDays());
+        }
+}
+
