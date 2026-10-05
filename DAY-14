@@ -1,0 +1,157 @@
+// 1. Local Date
+// /*
+//  * Instead of constructors, the API uses semantic factory methods like .now()
+//  * and .of():
+//  */
+
+import java.time.LocalDate;
+
+public class b61 {
+
+    public static void main(String[] args) {
+
+        LocalDate now = LocalDate.now();
+        System.out.println(now);
+    }
+}
+
+
+//Customized Date
+
+import java.time.LocalDate;
+
+public class b62 {
+    public static void main(String[] args) {
+        LocalDate now = LocalDate.now();
+        now.getDayOfMonth();
+        now.getDayOfWeek();
+        now.getDayOfYear();
+        System.out.println(now);
+        // For Customised Date
+        LocalDate customDate = LocalDate.of(1989, 04, 24);
+        System.out.println(customDate);
+        // For Cuurent Date - Process 2
+        LocalDate today = LocalDate.now();
+        System.out.println(today);
+        // For Yesterday
+        LocalDate Yesterday = today.minusDays(1);
+        System.out.println(Yesterday);
+        // For Last Month
+        LocalDate LastMonth = today.minusMonths(1);
+        System.out.println(LastMonth);
+        // For Last Year
+        LocalDate LastYear = today.minusYears(1);
+        System.out.println(LastYear);
+    }
+}
+
+
+//Check Date with Conditions
+import java.time.LocalDate;
+
+public class b63 {
+
+    public static void main(String[] args) {
+
+        LocalDate today = LocalDate.now();
+        System.out.println(today);
+        LocalDate yesterday = today.minusDays(1);
+
+        if (today.isAfter(yesterday)) {
+            System.out.println("Sahi Baat");
+        }
+    }
+}
+
+//Local Time
+
+import java.time.LocalTime;
+
+public class b64 {
+
+    public static void main(String[] args) {
+        LocalTime now = LocalTime.now();
+        System.out.println(now);
+        // For current Hour
+        System.out.println(now.getHour());
+        // For Current minute
+        System.out.println(now.getMinute());
+        // For current Second
+        System.out.println(now.getSecond());
+        // For Nanosecond
+        System.out.println(now.getNano());
+
+        // Customized Time
+        LocalTime CustomTime = LocalTime.of(12, 2, 23);
+        System.out.println(CustomTime);
+
+        // Parsing
+        String timeString = "15:30:45";
+        System.out.println(LocalTime.parse(timeString));
+
+        // Previos Hour
+        LocalTime pastTime = now.minusHours(1);
+        System.out.println(pastTime);
+    }
+}
+
+//Local Date Time
+
+import java.time.LocalDateTime;
+
+public class b65 {
+
+    public static void main(String[] args) {
+
+        // LocalDate Time
+        LocalDateTime now = LocalDateTime.now();
+        System.out.println(now);
+
+        // LocalDate Time- Customised
+        LocalDateTime var1 = LocalDateTime.of(1989, 04, 24, 15, 30);
+        System.out.println(var1);
+
+        
+
+    }
+}
+
+//Zoned Date Time - Coordinated Universal Time (UTC) 
+
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
+import java.util.Set;
+
+public class b66 {
+
+    public static void main(String[] args) {
+        ZonedDateTime now = ZonedDateTime.now();
+        System.out.println(now);
+        Set<String> availableZoneids = ZoneId.getAvailableZoneIds();
+        // System.out.println(availableZoneids);
+        availableZoneids.forEach(System.out::println);
+
+        // Customised ZonedDate Time
+        // Customized ZonedDateTime
+        ZonedDateTime auTime = ZonedDateTime.of(
+                1989, // Year
+                12, // Month
+                15, // Day
+                10, // Hour
+                30, // Minute
+                0, // Second
+                0, // Nano
+                ZoneId.of("Australia/Lindeman"));
+
+        System.out.println("\nAustralia/Lindeman Time:");
+        System.out.println(auTime);
+
+        // Find Indian Time
+        ZonedDateTime indiaTime = ZonedDateTime.now(ZoneId.of("Asia/Kolkata"));
+        System.out.println(indiaTime);
+
+        // Find Australian Time
+        ZonedDateTime aucurrentTime = ZonedDateTime.now(ZoneId.of("Australia/Lindeman"));
+        System.out.println(aucurrentTime);
+    }
+}
